@@ -1,7 +1,7 @@
 module Refinery
   module Polls
     class Version
-      @major = 2
+      @major = 0
       @minor = 0 
       @tiny  = 1
       @build = 'dev'

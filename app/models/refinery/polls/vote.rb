@@ -20,11 +20,11 @@ module Refinery
       
       # Find vote for Question by IP
       # @param [::Refinery::Polls::Question] Question object
-      # @parama [String] IP number
+      # @parama [Request] Request object to use remote_ip
       # @return [::Refinery::Polls::Vote] Vote object created
       def self.get_vote(question, ip)
         if ip.is_a?(String) && question.is_a?(::Refinery::Polls::Question)
-          where("question_id=? AND ip=?", question.id, ip).first
+          where("question_id=? AND ip=? AND created_at > ?", question.id, ip, Time.now - Refinery::Polls.vote_duration).first
         else
           nil
         end

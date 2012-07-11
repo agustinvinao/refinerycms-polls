@@ -55,7 +55,7 @@ module Refinery
       end
       
       def find_vote
-        @vote = ::Refinery::Polls::Vote.where("ip=? AND created_at > ?", request.remote_ip, Time.now - 1.week).first
+        @vote = ::Refinery::Polls::Vote.where("ip=? AND created_at > ?", request.remote_ip, Time.now - Refinery::Polls.vote_duration).first
       end
     end
   end

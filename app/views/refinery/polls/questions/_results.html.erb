@@ -5,9 +5,10 @@
     <% answers_with_data.each do |answer_with_data| %>
       <li>
         <span><%= answer_with_data[0] %></span>
-        <small>(<%= number_to_percentage((answer_with_data[1].to_f/total_votes.to_f)*100, :precision => 2) %>, <%= "#{answer_with_data[1]} votes" %>)</small>
+        <small><i>(<%= number_to_percentage((answer_with_data[1].to_f/total_votes.to_f)*100, :precision => 2) %>, <%= "#{answer_with_data[1]} votes" %>)</i></small>
         <div class="reinerycms-polls-pollbar" style="width: <%=number_to_percentage((answer_with_data[1].to_f/total_votes.to_f)*100, :precision => 0)%>;"></div>
       </li>
     <% end %>
+    <li><small>Total voters: <%=total_votes%></small></li>
   </ul>
 <% end %>

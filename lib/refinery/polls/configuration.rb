@@ -2,9 +2,9 @@ module Refinery
   module Polls
     include ActiveSupport::Configurable
     
-    config_accessor :test_value
+    config_accessor :vote_duration
     
-    self.test_value = 0
+    self.vote_duration = 1.week
 
   end
 end
