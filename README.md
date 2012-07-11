@@ -12,7 +12,7 @@ Then type the following at command line inside your Refinery CMS application's r
 
 To install the migrations, run:
 
-    rails generate refinery:inquiries
+    rails generate refinery:polls
     rake db:migrate
     
 Add pages to the database and you're done:
