@@ -21,6 +21,14 @@ Add pages to the database and you're done:
 
     rake db:seed
     
+## Set vote interval by ip:
+After install "generate refinery:polls" you will have an initializer called refinery/poll.rb, you can modify vote interval there.
+
+    Refinery::Polls.configure do |config|
+      # Configure how long is going to be valid a vote for a guest
+      config.vote_duration = 1.week
+    end
+
 ## About
 
 __Add polls to your Refinery site.__
