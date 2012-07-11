@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.test_files        = `git ls-files -- spec/*`.split("\n")
   s.authors           = ['Agustin Viñao']
   s.email             = %q{agustinvinao@gmail.com}
+  s.homepage          = 'https://github.com/agustinvinao/refinerycms-polls'
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core' ,    '~> 2.0.2'
