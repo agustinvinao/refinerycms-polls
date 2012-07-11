@@ -28,7 +28,7 @@ module Refinery
           unless @vote
             @answer.votes_count += 1
             @answer.save
-            @vote = ::Refinery::Polls::Vote.vote_by_ip(@question.id, @answer.id, request.remote_ip)
+            @vote = ::Refinery::Polls::Vote.vote_by_ip(@question, @answer, request.remote_ip)
           end
           respond_to do |format|
             format.js

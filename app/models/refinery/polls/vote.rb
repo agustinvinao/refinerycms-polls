@@ -9,11 +9,25 @@ module Refinery
       
       attr_accessible :question_id, :answer_id, :ip
       
-      def self.vote_by_ip(question_id, answer_id, ip)
-        self.create(:answer_id => answer_id, :question_id => question_id, :ip => ip)
+      # Create Vote for Question, Answer and IP
+      # @param [::Refinery::Polls::Question] Question object
+      # @parama [::Refinery::Polls::Answer] Answer object
+      # @return [::Refinery::Polls::Vote] Vote object created
+      
+      def self.vote_by_ip(question, answer, ip)
+        self.create(:answer_id => answer.id, :question_id => question.id, :ip => ip)
       end
+      
+      # Find vote for Question by IP
+      # @param [::Refinery::Polls::Question] Question object
+      # @parama [String] IP number
+      # @return [::Refinery::Polls::Vote] Vote object created
       def self.get_vote(question, ip)
-        where("question_id=? AND ip=?", question.id, ip).first
+        if ip.is_a?(String) && question.is_a?(::Refinery::Polls::Question)
+          where("question_id=? AND ip=?", question.id, ip).first
+        else
+          nil
+        end
       end
     end
   end

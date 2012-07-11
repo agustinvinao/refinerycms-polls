@@ -1,3 +1,5 @@
+### IMPORTANT:
+  This is a very early version, is not finished for production. This is only some push to the repo for all saved
 ### Gem Installation using Bundler (The very best way)
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-polls) into your Refinery CMS application's Gemfile:
