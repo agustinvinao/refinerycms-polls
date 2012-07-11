@@ -1,0 +1,44 @@
+en:
+  refinery:
+    plugins:
+      polls:
+        title: Polls
+    polls:
+      admin:
+        questions:
+          actions:
+            create_new: Add New Poll
+            reorder: Reorder Polls
+            reorder_done: Done Reordering Polls
+          records:
+            title: Polls
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Polls yet. Click "Add New Poll" to add your first poll.
+          question:
+            view_live_html: View this poll live <br/><em>(opens in a new window)</em>
+            edit: Edit this poll
+            delete: Remove this poll forever
+            manage_answers: View answers for this poll
+        answers:
+          actions:
+            create_new: Add New Poll Answer
+            reorder: Reorder Poll Answers
+            reorder_done: Done Reordering Poll Answers
+          records:
+            title: Poll Answers
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Poll Answers yet. Click "Add New Poll Answer" to add your first poll answer.
+          answer:
+            view_live_html: View this poll answer live <br/><em>(opens in a new window)</em>
+            edit: Edit this poll answer
+            delete: Remove this poll answer forever
+      questions:
+        show:
+          other: Other Polls
+  activerecord:
+    attributes:
+      'refinery/polls/question':
+        title: Title
+        start_date: Start Date
+        end_date: End Date
+        position: Position

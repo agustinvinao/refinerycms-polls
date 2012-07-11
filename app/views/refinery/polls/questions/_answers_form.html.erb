@@ -1,0 +1,10 @@
+<ul>
+  <%= form_for :question, 
+               :url => refinery.submit_polls_question_path(question), 
+               :remote => true, 
+               :html => {:id => "reinerycms-poll-#{question.slug}"} do |f| %>
+    <% question.answers.each do |answer| %>
+      <li><%= radio_button_tag("answer_id", answer.id, false) %> <%= answer.title %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="questions">
+    <% @questions.each do |poll| %>
+      <li>
+        <%= link_to question.title, refinery.polls_question_path(question) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

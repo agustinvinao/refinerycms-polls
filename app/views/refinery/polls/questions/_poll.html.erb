@@ -1,0 +1,10 @@
+<% content_for :stylesheets, stylesheet_link_tag('refinery/polls/poll_form') %>
+<% if question %>
+  <div id="reinerycms-poll-<%=question.slug%>" class="reinerycms-polls-form">
+    <h3><%= question.title %></h3>
+    <% if question %>
+      <%= (vote = ::Refinery::Polls::Vote.get_vote(question, request.remote_ip)).nil? ? render(:partial => 'refinery/polls/questions/answers_form', :locals => {:question => question}) : render(:partial => 'refinery/polls/questions/results', :locals => {:question => question, :vote => vote}) %>
+    <% end %>
+  </div>
+  <% content_for :javascripts, javascript_include_tag('application', 'refinery/polls/poll_form') %>
+<% end %>

@@ -1,0 +1,31 @@
+.reinerycms-polls-form h3{
+  padding:5px;
+}
+.reinerycms-polls-form h5{
+  padding:5px 5px 0 5px;
+  font-size:1em;
+  margin:0px;
+}
+.reinerycms-polls-form ul{
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+.reinerycms-polls-pollbar {
+  margin: 1px;
+  font-size: 13px;
+  line-height: 15px;
+  height: 15px;
+  background-image: image_url('refinery/polls/pollbg.gif');
+  border: 1px solid #ffffff;
+}
+.reinerycms-polls-pollbar IMG {
+  display: inline;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+.reinerycms-polls-results{
+  /*max-width:300px;*/
+  border:1px solid #CCC;
+}

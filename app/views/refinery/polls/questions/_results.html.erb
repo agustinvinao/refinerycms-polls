@@ -1,0 +1,13 @@
+<% if question && vote %>
+  <p>Your vote was: <%= vote.answer.title %></p>
+  <ul class="reinerycms-polls-results">
+    <% answers_with_data, total_votes = question.answers_with_data %>
+    <% answers_with_data.each do |answer_with_data| %>
+      <li>
+        <span><%= answer_with_data[0] %></span>
+        <small>(<%= number_to_percentage((answer_with_data[1].to_f/total_votes.to_f)*100, :precision => 2) %>, <%= "#{answer_with_data[1]} votes" %>)</small>
+        <div class="reinerycms-polls-pollbar" style="width: <%=number_to_percentage((answer_with_data[1].to_f/total_votes.to_f)*100, :precision => 0)%>;"></div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

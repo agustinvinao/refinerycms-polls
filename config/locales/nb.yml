@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      polls:
+        title: Polls
+    polls:
+      admin:
+        questions:
+          actions:
+            create_new: Lag en ny Poll
+            reorder: Endre rekkefølgen på Polls
+            reorder_done: Ferdig å endre rekkefølgen Polls
+          records:
+            title: Polls
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Polls enda. Klikk på "Lag en ny Poll" for å legge til din første poll.
+          question:
+            view_live_html: Vis hvordan denne poll ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne poll
+            delete: Fjern denne poll permanent
+      questions:
+        show:
+          other: Andre Polls
+  activerecord:
+    attributes:
+      'refinery/polls/question':
+        title: Title
+        start_date: Start Date
+        end_date: End Date
+        position: Position

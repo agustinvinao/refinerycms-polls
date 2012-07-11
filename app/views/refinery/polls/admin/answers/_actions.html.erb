@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Polls::Admin::AnswersController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.polls_admin_question_answers_path(@question) %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_polls_admin_question_answer_path(@question),
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Polls::Admin::AnswersController.sortable? && ::Refinery::Polls::Answer.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Questions"),
+                 refinery.polls_admin_question_answers_path(@question),
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Answers"),
+                 refinery.polls_admin_question_answers_path(@question),
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

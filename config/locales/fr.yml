@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      polls:
+        title: Polls
+    polls:
+      admin:
+        questions:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Poll
+            reorder: Réordonner les Polls
+            reorder_done: Fin de réordonnancement des Polls
+          records:
+            title: Polls
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Poll. Cliquer sur "Créer un(e) nouve(au/l/lle) Poll" pour créer votre premi(er/ère) poll.'
+          question:
+            view_live_html: Voir ce(t/tte) poll <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) poll
+            delete: Supprimer définitivement ce(t/tte) poll
+      questions:
+        show:
+          other: Autres Polls
+  activerecord:
+    attributes:
+      'refinery/polls/question':
+        title: Title
+        start_date: Start Date
+        end_date: End Date
+        position: Position
