@@ -4,7 +4,7 @@
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-polls) into your Refinery CMS application's Gemfile:
 
-    gem 'refinerycms-polls', '~> 2.0.1.dev'
+    gem 'refinerycms-polls', '~> 0.0.1.dev'
 
 Then type the following at command line inside your Refinery CMS application's root directory:
 
