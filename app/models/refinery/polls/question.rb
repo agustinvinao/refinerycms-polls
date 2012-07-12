@@ -14,6 +14,8 @@ module Refinery
       attr_accessible :title, :start_date, :end_date, :position
       attr_accessor :locale
       
+      default_scope order("position ASC")
+      
       class Translation
         attr_accessible :locale
       end
@@ -25,7 +27,7 @@ module Refinery
       has_many :answers, :class_name => '::Refinery::Polls::Answer'
       
       def self.actives
-        where("start_date >= ? and end_date <= ?", Date.today, Date.today)
+        where("start_date <= ? and end_date >= ?", Date.today, Date.today)
       end
       
       def answers_with_data

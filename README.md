@@ -29,6 +29,19 @@ After install "generate refinery:polls" you will have an initializer called refi
       config.vote_duration = 1.week
     end
 
+# Render a Poll
+
+You can get all actives polls with:
+
+    Refinery::Polls::Question.actives
+
+all questions will be orderer by default with position value in admin reorder functionality.
+
+And pick up one question to render a poll with the partial "poll":
+
+    render '/refinery/polls/questions/poll', :question => question
+    
+
 ## About
 
 __Add polls to your Refinery site.__
@@ -41,3 +54,12 @@ In summary you can:
 * Show results for your polls.
 * Set votes for anonymous users by IP addres
 * Set aa duration period to vote. (if a guest vote it will need to wait x time to vote again)
+
+## Todo
+
+* Vote tracking by cookies.
+* Documentation
+* Tests
+* Wiki
+* Howto use custom styles
+* Howto override view
