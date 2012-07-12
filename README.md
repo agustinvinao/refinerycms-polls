@@ -40,7 +40,14 @@ all questions will be orderer by default with position value in admin reorder fu
 And pick up one question to render a poll with the partial "poll":
 
     render '/refinery/polls/questions/poll', :question => question
+
+Override default view for partial _poll
+
+You can override the default partial view for a poll replacing this partial:
     
+    /refinery/polls/questions/_poll.html.erb
+
+You only need to create that path and file in your app tree.
 
 ## About
 
@@ -61,5 +68,3 @@ In summary you can:
 * Documentation
 * Tests
 * Wiki
-* Howto use custom styles
-* Howto override view
