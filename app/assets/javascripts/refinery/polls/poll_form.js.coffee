@@ -1,7 +1,6 @@
-do_vote = (element, url) ->
+do_vote = (element) ->
   $(element).parents().find('form').submit()
 jQuery ->
-  url = $("input[type=radio][name=answer_id]").parents().find('form').attr("action")
   $("input[type=radio][name=answer_id]").click ->
-    do_vote(this, url)
+    do_vote(this)
     $(this).attr "disabled", true
