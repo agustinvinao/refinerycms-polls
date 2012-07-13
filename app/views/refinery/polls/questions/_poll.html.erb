@@ -6,5 +6,5 @@
       <%= (vote = ::Refinery::Polls::Vote.get_vote(question, request.remote_ip)).nil? ? render(:partial => 'refinery/polls/questions/answers_form', :locals => {:question => question}) : render(:partial => 'refinery/polls/questions/results', :locals => {:question => question, :vote => vote}) %>
     <% end %>
   </div>
-  <% content_for :javascripts, javascript_include_tag('application', 'refinery/polls/poll_form') %>
+  <% content_for :javascripts, javascript_include_tag('poll', 'refinery/polls/poll_form') %>
 <% end %>
