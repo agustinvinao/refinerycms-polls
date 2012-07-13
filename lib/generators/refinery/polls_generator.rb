@@ -12,7 +12,7 @@ module Refinery
     end
     
     def generate_styles_to_assets
-      template "app/assets/stylesheets/refinery/polls/poll.rb.erb", File.join(destination_root, "app", "assets", "stylesheets", "refinery", "polls", "poll.css.scss")
+      template "app/assets/stylesheets/refinery/polls/poll.css.scss", File.join(destination_root, "app", "assets", "stylesheets", "refinery", "polls", "poll.css.scss")
     end
     
     def append_load_seed_data
