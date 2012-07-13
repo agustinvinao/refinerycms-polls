@@ -23,7 +23,7 @@ module Refinery
       end
       
       def dom_id
-        "answer_#{id}"
+        "#{self.class.table_name.singularize}_#{id}"
       end
       
       def self.translated
