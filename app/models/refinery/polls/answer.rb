@@ -22,6 +22,10 @@ module Refinery
         attr_accessible :locale
       end
       
+      def dom_id
+        "answer_#{id}"
+      end
+      
       def self.translated
         with_translations(::Globalize.locale)
       end

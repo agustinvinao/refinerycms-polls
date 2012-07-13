@@ -4,7 +4,10 @@
                :remote => true, 
                :html => {:id => "reinerycms-poll-#{question.slug}"} do |f| %>
     <% question.answers.each do |answer| %>
-      <li><%= radio_button_tag("answer_id", answer.id, false) %> <%= answer.title %></li>
+      <li>
+        <%= radio_button_tag("answer_id", answer.id, false, id: answer.dom_id) %>
+        <%= label_tag answer.dom_id, answer.title %>
+      </li>
     <% end %>
   <% end %>
 </ul>
