@@ -68,3 +68,7 @@ In summary you can:
 * Documentation
 * Tests
 * Wiki
+
+
+## License
+RefineryCMS Polls extension is released under the MIT license and is copyright (c) 2012 Agustin Viñao

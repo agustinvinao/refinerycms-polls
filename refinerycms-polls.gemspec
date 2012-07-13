@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.authors           = ['Agustin Viñao']
   s.email             = %q{agustinvinao@gmail.com}
   s.homepage          = 'https://github.com/agustinvinao/refinerycms-polls'
+  s.license           = 'MIT'
+  s.post_install_message = "Thanks for installing! If you have any ideas or comments please contact me agustinvinao@gmail.com"
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core' ,    '~> 2.0.2'

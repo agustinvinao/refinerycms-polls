@@ -10,7 +10,11 @@ module Refinery
     def generate_poll_initializer
       template "config/initializers/refinery/poll.rb.erb", File.join(destination_root, "config", "initializers", "refinery", "poll.rb")
     end
-
+    
+    def generate_styles_to_assets
+      template "app/assets/stylesheets/refinery/polls/poll.rb.erb", File.join(destination_root, "app", "assets", "stylesheets", "refinery", "polls", "poll.css.scss")
+    end
+    
     def append_load_seed_data
       create_file 'db/seeds.rb' unless File.exists?(File.join(destination_root, 'db', 'seeds.rb'))
       append_file 'db/seeds.rb', :verbose => true do

@@ -16,6 +16,7 @@ Refinery::Core::Engine.routes.append do
   # Admin routes
   namespace :polls, :path => '' do
     namespace :admin, :path => 'refinery' do
+      #hack for delete action in admin, it can't handle nested routes
       match "/refinery/questions/:question_id/answers" => "refinery/polls/admin/answers#index", :as => :answer
       resources :questions, :except => :show do
         collection do
