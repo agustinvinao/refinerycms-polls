@@ -2,39 +2,39 @@ en:
   refinery:
     plugins:
       polls:
-        title: Polls
+        title: Questions
     polls:
       admin:
         questions:
           actions:
-            create_new: Add New Poll
-            reorder: Reorder Polls
-            reorder_done: Done Reordering Polls
+            create_new: Add New Question
+            reorder: Reorder Questions
+            reorder_done: Done Reordering Questions
           records:
-            title: Polls
+            title: Questions
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Polls yet. Click "Add New Poll" to add your first poll.
+            no_items_yet: There are no Questions yet. Click "Add New Question" to add your first question.
           question:
-            view_live_html: View this poll live <br/><em>(opens in a new window)</em>
-            edit: Edit this poll
-            delete: Remove this poll forever
-            manage_answers: View answers for this poll
+            view_live_html: View this question live <br/><em>(opens in a new window)</em>
+            edit: Edit this question
+            delete: Remove this question forever
+            manage_answers: View answers for this question
         answers:
           actions:
-            create_new: Add New Poll Answer
-            reorder: Reorder Poll Answers
-            reorder_done: Done Reordering Poll Answers
+            create_new: Add New Question Answer
+            reorder: Reorder Question Answers
+            reorder_done: Done Reordering Question Answers
           records:
-            title: Poll Answers
+            title: Question Answers
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Poll Answers yet. Click "Add New Poll Answer" to add your first poll answer.
+            no_items_yet: There are no Question Answers yet. Click "Add New Question Answer" to add your first question answer.
           answer:
-            view_live_html: View this poll answer live <br/><em>(opens in a new window)</em>
-            edit: Edit this poll answer
-            delete: Remove this poll answer forever
+            view_live_html: View this question answer live <br/><em>(opens in a new window)</em>
+            edit: Edit this question answer
+            delete: Remove this question answer forever
       questions:
         show:
-          other: Other Polls
+          other: Other Questions
   activerecord:
     attributes:
       'refinery/polls/question':

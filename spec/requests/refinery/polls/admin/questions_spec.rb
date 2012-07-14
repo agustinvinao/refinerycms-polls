@@ -4,7 +4,7 @@ require "spec_helper"
 describe Refinery do
   describe "Polls" do
     describe "Admin" do
-      describe "questions" do
+      describe "Questions" do
         login_refinery_user
 
         describe "questions list" do

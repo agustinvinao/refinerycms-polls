@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Polls
-    describe quesiton do
+    describe Question do
       describe "validations" do
         subject do
           FactoryGirl.create(:question,

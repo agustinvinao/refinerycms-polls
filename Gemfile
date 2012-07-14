@@ -2,9 +2,9 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'refinerycms', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms.git'
+gem 'refinerycms', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
 gem 'refinerycms-i18n', :git => 'git://github.com/parndt/refinerycms-i18n.git'
-gem 'refinerycms-settings', :git => 'git://github.com/parndt/refinerycms-settings.git'
+gem 'refinerycms-settings', :git => 'git://github.com/parndt/refinerycms-settings.git', :branch => '2-0-stable'
 
 # Refinery/rails should pull in the proper versions of these
 group :assets do
@@ -19,6 +19,7 @@ group :development, :test do
   gem 'refinerycms-testing', '~> 2.0.0'
   gem 'factory_girl_rails'
   gem 'generator_spec'
+  gem 'activesupport'
 
   require 'rbconfig'
 

@@ -1,3 +1,4 @@
+require 'active_support/core_ext/numeric/time'
 module Refinery
   module Polls
     include ActiveSupport::Configurable
