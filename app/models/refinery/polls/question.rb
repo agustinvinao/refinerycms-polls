@@ -30,6 +30,10 @@ module Refinery
         where("start_date <= ? and end_date >= ?", Date.today, Date.today)
       end
       
+      def already_voted?(remote_ip)
+        answers.joins(:votes).where(Refinery::Polls::Vote.table_name.to_sym => {:created_at => Time.now.utc - Refinery::Polls.vote_duration, :ip => remote_ip}).first
+      end
+      
       def answers_with_data
         results, votes_total = [], 0
         answers.each do |answer|

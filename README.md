@@ -4,7 +4,7 @@
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-polls) into your Refinery CMS application's Gemfile:
 
-    gem 'refinerycms-polls', '~> 0.0.1.dev'
+    gem 'refinerycms-polls', '~> 0.0.3.dev'
 
 Then type the following at command line inside your Refinery CMS application's root directory:
 
@@ -60,7 +60,7 @@ In summary you can:
 * Set when starts and ends your polls.
 * Show results for your polls.
 * Set votes for anonymous users by IP addres
-* Set aa duration period to vote. (if a guest vote it will need to wait x time to vote again)
+* Set duration period to vote. (if a guest vote it will need to wait X time to vote again)
 
 ## Todo
 

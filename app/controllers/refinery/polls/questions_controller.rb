@@ -55,7 +55,7 @@ module Refinery
       end
       
       def find_vote
-        @vote = ::Refinery::Polls::Vote.where("ip=? AND created_at > ?", request.remote_ip, Time.now - Refinery::Polls.vote_duration).first
+        @vote = @question.already_voted?(request.remote_ip)
       end
     end
   end
