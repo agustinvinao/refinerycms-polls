@@ -5,7 +5,7 @@ module Refinery
 
         crudify :'refinery/polls/answer', :title_attribute => 'title', :xhr_paging => true
         before_filter :find_question 
-        before_filter :find_answer, :only => [:edit, :update]
+        before_filter :find_answer, :only => [:edit, :update, :destroy]
         
         def index
           paginate_all_answers
@@ -16,24 +16,37 @@ module Refinery
 
         def create
           if (@answer = ::Refinery::Polls::Answer.create({:question_id => @question.id}.merge(params[:answer]))).valid?
-            flash.now[:notice] = "#{@answer.title} was successfully created."
+            flash.now[:notice] = "'#{@answer.title}' was successfully added."
             self.index
             @dialog_successful = true
             render :index
           else
+            flash.now[:notice] = "There were problems"
             render :action => 'new'
           end
         end
 
         def update
           if @answer.update_attributes({:question_id => @question.id}.merge(params[:answer]))
-            flash.now[:notice] = "#{@answer.title} was successfully updated."
+            flash.now[:notice] = "'#{@answer.title}' was successfully updated."
             self.index
             @dialog_successful = true
             render :index
           else
             render :action => 'edit'
           end
+        end
+        
+        def destroy
+          answer_title = @answer.title
+          if @answer.destroy
+            flash.now[:notice] = "'#{answer_title}' was successfully removed."
+            @dialog_successful = true
+          else
+            flash.now[:notice] = "There were problems"
+          end
+          self.index
+          render :index
         end
         
         private
