@@ -20,3 +20,4 @@ load File.expand_path('../tasks/testing.rake', __FILE__)
 load File.expand_path('../tasks/rspec.rake', __FILE__)
 
 Bundler::GemHelper.install_tasks
+task :default => :spec
