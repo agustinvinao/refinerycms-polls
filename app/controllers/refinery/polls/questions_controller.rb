@@ -20,12 +20,17 @@ module Refinery
         present(@page)
       end
       
+      
+      # Handle votes from questions
+      #
+      # @param [id] Id of question voted
+      # @param [question_id] Value of the answer selected by guest
+      # @return [String] Question results
       def submit
         if @vote.nil?
           if @answer.nil?
             flash[:notice] = t(".no_answer_selected")
           else
-            Rails.logger.info(">>>VOTE COUNT (BEFORE CREATE): #{::Refinery::Polls::Vote.count}")
             @vote = ::Refinery::Polls::Vote.vote_by_ip(@answer, request.remote_ip)
           end
         end

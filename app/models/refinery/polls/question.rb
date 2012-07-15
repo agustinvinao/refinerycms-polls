@@ -26,18 +26,31 @@ module Refinery
       
       has_many :answers, :class_name => '::Refinery::Polls::Answer'
       
+      # Get all actives questions by start_date and end_date
+      #
+      # @return [Array] Array of Refinery::Polls::Question
       def self.actives
         where("start_date <= ? and end_date >= ?", Date.today, Date.today)
       end
       
+      # Check if we have a vote by ip address
+      #
+      # @param [String] A string to represent an IP address
+      # @return [::Refinery::Polls::Vote, nil] Returns the vote finded or nil
       def already_voted?(remote_ip)
         answers.joins(:votes).where(Refinery::Polls::Vote.table_name.to_sym => {:created_at => Time.now.utc - Refinery::Polls.vote_duration, :ip => remote_ip}).first
       end
       
+      # Get al data for answers and total votes count
+      #
+      # @return [Array] Returns an array with [[title,votes_count]..[title,votes_count]], total_votes]
       def answers_with_data
         return answers.map(&:data_result), total_votes
       end
       
+      # Calculate the total votes for current question
+      #
+      # @return [Integer] Returns the value of total votes
       def total_votes
         answers.sum(&:votes_count)
       end
@@ -51,11 +64,6 @@ module Refinery
           end
         end
       end
-      # def self.active_poll(user_id)
-      #   users_polls = UsersPoll.find_all_by_user_id(user_id, :select => :poll_id)
-      #   polls = users_polls.count > 0 ? Poll.active.find(:all, :conditions => ["id NOT IN (?)", users_polls.collect {|up| up.poll_id } ]) : Poll.active
-      #   polls.count > 0 ? polls.first : nil
-      # end
     end
   end
 end

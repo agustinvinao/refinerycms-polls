@@ -10,6 +10,7 @@ module Refinery
       attr_accessible :question_id, :answer_id, :ip
       
       # Create Vote for Question, Answer and IP
+      #
       # @param [::Refinery::Polls::Question] Question object
       # @parama [::Refinery::Polls::Answer] Answer object
       # @return [::Refinery::Polls::Vote] Vote object created
@@ -19,6 +20,7 @@ module Refinery
       end
       
       # Find vote for Question by IP
+      #
       # @param [::Refinery::Polls::Question] Question object
       # @parama [Request] Request object to use remote_ip
       # @return [::Refinery::Polls::Vote] Vote object created

@@ -16,4 +16,6 @@
 * Fix jquery library loads from extension and not from cms.
 * Fix poll form double submit if user does dobel click.
 * Fix howto finds votes for question with already_voted?(remote_ip) in Question model.
-* Fix tests for Question model
+* Fix tests for all models/controllers
+* Add tests for question controller
+* Add documentation

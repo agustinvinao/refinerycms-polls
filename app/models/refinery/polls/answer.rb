@@ -21,12 +21,21 @@ module Refinery
       class Translation
         attr_accessible :locale
       end
+      
+      # Get a string to represent a dom id
+      #
+      # @return [String] Returns the dom id representation for the current object
       def dom_id
         "answer_#{id}"
       end
+      
+      # Get an array of title and votes_count
+      #
+      # @return [Array] Returns an array of title and votes_count
       def data_result
         [title, votes_count]
       end
+      
       def self.translated
         with_translations(::Globalize.locale)
       end
