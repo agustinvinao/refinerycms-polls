@@ -11,6 +11,8 @@
 ## v0.0.3.dev
 
 * Add css file app/assets/stylesheets/refinery/polls/poll.css.scss to override poll styles.
+
+## v0.0.4.dev
 * Poll checkbox as labels to better user experience.
 * Translate js to coffee script.
 * Fix jquery library loads from extension and not from cms.
