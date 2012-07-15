@@ -8,7 +8,7 @@ module Refinery
     
       acts_as_indexed :fields => [:title]
 
-      validates :title, :presence => true, :uniqueness => true
+      validates :title, :presence => true, :uniqueness => { :scope => :question_id}
       
       attr_accessible :title, :question_id, :position
       attr_accessor :locale
@@ -20,6 +20,9 @@ module Refinery
 
       class Translation
         attr_accessible :locale
+      end
+      def dom_id
+        "answer_#{id}"
       end
       def data_result
         [title, votes_count]

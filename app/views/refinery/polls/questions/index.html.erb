@@ -1,9 +1,10 @@
 <% content_for :body_content_left do %>
+  <h4>Polls</h4>
   <ul id="questions">
-    <% @questions.each do |poll| %>
-      <li>
+    <% @questions.each do |question| %>
+      <%= content_tag_for :li, question do %>
         <%= link_to question.title, refinery.polls_question_path(question) %>
-      </li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>

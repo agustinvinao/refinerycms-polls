@@ -2,11 +2,11 @@ module Refinery
   module Polls
     class QuestionsController < ::ApplicationController
 
-      before_filter :find_all_questions, :only => [:index]
+      before_filter :find_all_questions, :only => [:index, :show]
       before_filter :find_page, :except => [:submit]
-      before_filter :find_vote, :only => [:show, :create]
-      before_filter :find_answer, :only => [:submit]
       before_filter :find_question, :only => [:submit, :show]
+      before_filter :find_answer, :only => [:submit]
+      before_filter :find_vote, :only => [:show, :create, :submit]
       respond_to :html, :js, :json
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -21,19 +21,17 @@ module Refinery
       end
       
       def submit
-        @vote = nil
-        if @answer.nil?
-          flash[:notice] = t(".no_answer_selected")
-        else
-          unless @vote
-            @answer.votes_count += 1
-            @answer.save
-            @vote = ::Refinery::Polls::Vote.vote_by_ip(@question, @answer, request.remote_ip)
+        if @vote.nil?
+          if @answer.nil?
+            flash[:notice] = t(".no_answer_selected")
+          else
+            Rails.logger.info(">>>VOTE COUNT (BEFORE CREATE): #{::Refinery::Polls::Vote.count}")
+            @vote = ::Refinery::Polls::Vote.vote_by_ip(@answer, request.remote_ip)
           end
-          respond_to do |format|
-            format.js
-            format.html
-          end
+        end
+        respond_to do |format|
+          format.js
+          format.html
         end
       end
 
@@ -55,7 +53,7 @@ module Refinery
       end
       
       def find_vote
-        @vote = @question.already_voted?(request.remote_ip)
+        @vote = ::Refinery::Polls::Vote.get_vote(@question, request.remote_ip)
       end
     end
   end

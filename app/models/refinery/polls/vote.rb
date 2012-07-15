@@ -5,7 +5,7 @@ module Refinery
       acts_as_indexed :fields => [:question_id, :answer_id, :ip]
 
       belongs_to :question, :class_name => '::Refinery::Polls::Question'
-      belongs_to :answer, :class_name => '::Refinery::Polls::Answer'
+      belongs_to :answer, :class_name => '::Refinery::Polls::Answer', :counter_cache => true
       
       attr_accessible :question_id, :answer_id, :ip
       
