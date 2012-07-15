@@ -35,12 +35,11 @@ module Refinery
       end
       
       def answers_with_data
-        results, votes_total = [], 0
-        answers.each do |answer|
-          results << [answer.title, answer.votes_count]
-          votes_total += answer.votes_count
-        end
-        return results, votes_total
+        return answers.map(&:data_result), total_votes
+      end
+      
+      def total_votes
+        answers.sum(&:votes_count)
       end
       
       class << self
@@ -57,10 +56,6 @@ module Refinery
       #   polls = users_polls.count > 0 ? Poll.active.find(:all, :conditions => ["id NOT IN (?)", users_polls.collect {|up| up.poll_id } ]) : Poll.active
       #   polls.count > 0 ? polls.first : nil
       # end
-      
-      
-      # acceso a variables connfiguradas
-      #self.per_page = Refinery::Blog.posts_per_page
     end
   end
 end

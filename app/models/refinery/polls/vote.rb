@@ -14,8 +14,8 @@ module Refinery
       # @parama [::Refinery::Polls::Answer] Answer object
       # @return [::Refinery::Polls::Vote] Vote object created
       
-      def self.vote_by_ip(question, answer, ip)
-        self.create(:answer_id => answer.id, :question_id => question.id, :ip => ip)
+      def self.vote_by_ip(answer, ip)
+        self.create(:answer_id => answer.id, :question_id => answer.question.id, :ip => ip)
       end
       
       # Find vote for Question by IP

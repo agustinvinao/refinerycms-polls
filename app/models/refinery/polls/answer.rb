@@ -21,11 +21,9 @@ module Refinery
       class Translation
         attr_accessible :locale
       end
-      
-      def dom_id
-        "#{self.class.table_name.singularize}_#{id}"
+      def data_result
+        [title, votes_count]
       end
-      
       def self.translated
         with_translations(::Globalize.locale)
       end
