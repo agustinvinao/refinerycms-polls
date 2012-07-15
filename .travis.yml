@@ -1,0 +1,17 @@
+before_script:
+  - "bundle exec rake refinery:testing:dummy_app > /dev/null"
+script: "bundle exec rake spec"
+notifications:
+  email:
+    - agustinvinao@gmail.com
+env:
+  - DB=postgresql
+  - DB=mysql
+matrix:
+  allow_failures:
+    - rvm: rbx-19mode
+rvm:
+  - 1.8.7
+  - 1.9.3
+  - rbx-19mode
+  - jruby

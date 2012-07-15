@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.date              = '2012-07-03'
   s.summary           = 'Polls extension for Refinery CMS'
   s.require_paths     = %w(lib)
-  s.files             = `git ls-files`.split("\n") #Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
-  s.test_files        = `git ls-files -- spec/*`.split("\n")
+  s.files             = `git ls-files`.split("\n")
+  s.test_files        = `git ls-files -- {spec}/*`.split("\n")
   s.authors           = ['Agustin Viñao']
   s.email             = %q{agustinvinao@gmail.com}
   s.homepage          = 'https://github.com/agustinvinao/refinerycms-polls'
