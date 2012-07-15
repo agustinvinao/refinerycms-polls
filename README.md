@@ -1,5 +1,7 @@
+### RefineryCMS-Polls extension [![Build Status](https://secure.travis-ci.org/agustinvinao/refinerycms-polls.png?branch=master)](http://travis-ci.org/agustinvinao/refinerycms-polls)
+
 ### IMPORTANT:
-  This is a very early version, is not finished for production. This is only some push to the repo for all saved
+  This extension requires Ruby 1.9.x. It's time to upgrade our current ruby base systems.
 ### Gem Installation using Bundler (The very best way)
 
 Include the latest [gem](http://rubygems.org/gems/refinerycms-polls) into your Refinery CMS application's Gemfile:
