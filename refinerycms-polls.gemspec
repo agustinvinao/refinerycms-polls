@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   s.post_install_message = "Thanks for installing! If you have any ideas or comments please contact me agustinvinao@gmail.com"
 
   # Runtime dependencies
-  s.add_dependency             'refinerycms-core' ,    '~> 2.0.2'
-  s.add_dependency             'refinerycms-settings' , '~> 2.0.0'
+  s.add_dependency             'refinerycms-core' ,    '~> 2.1.1'
+  s.add_dependency             'refinerycms-settings' , '~> 2.1.1'
 
   # Development dependencies (usually used for testing)
-  s.add_development_dependency 'refinerycms-testing' , '~> 2.0.2'
+  s.add_development_dependency 'refinerycms-testing' , '~> 2.1.0'
 end
